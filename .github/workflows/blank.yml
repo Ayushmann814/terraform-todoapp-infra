@@ -1,0 +1,35 @@
+name: terraform-todaoapp
+
+on: 
+  push:
+    branches: 
+    - master
+
+
+jobs: 
+  terraform-deploy:
+    runs-on: ubuntu-latest
+    if: github.repository == terraform-todoapp-infra
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v5.0.0
+    
+    - name: Azure Login
+      uses: Azure/login@v2.3.0
+      with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+    
+
+    
+          
+
+      
+    
+    
+              
+      
+    
+    
